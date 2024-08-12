@@ -1,12 +1,11 @@
-package lijie.learning.myannotation.simplejunit;
+package lijie.learning.myannotation.my_junit;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.lang.reflect.Method;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface MyAfter {
+public @interface MyTest {
 }

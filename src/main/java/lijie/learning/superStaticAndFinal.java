@@ -3,7 +3,7 @@ package lijie.learning;
 public class superStaticAndFinal {
     public static void main(String[] args){
         Zi zi=new Zi();
-
+        Zi1 z1 = new Zi1();
         // 静态内部类的好处是，外部调用者在new的时候无需实例化外部类------静态内部类当做类属性来看
         superStaticAndFinal.Department ud = new superStaticAndFinal.Department();
 
@@ -11,7 +11,7 @@ public class superStaticAndFinal {
         //ssf = new superStaticAndFinal().new Department();
 
     }
-    static class Fu{
+    static class Fu<T>{
         public final static String FU_STATIC_AA="FUAA";
         static {
             System.out.println("FU's static block.");
@@ -22,6 +22,7 @@ public class superStaticAndFinal {
         }
         public void printA(){
             System.out.println("FU's a="+a);
+            System.out.println("method in FU. and 'this' = " + this.getClass().getName());
         }
     }
 
@@ -45,6 +46,9 @@ public class superStaticAndFinal {
     //静态内部类
     static class Department{
         private String dpName;
+    }
+    static class Zi1 extends Fu{
+
     }
 }
 

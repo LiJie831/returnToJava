@@ -1,9 +1,4 @@
-package lijie.learning.myannotation.simplejunit;
-
-import lijie.learning.myannotation.simplejunit.AnExampleToBeTest;
-import lijie.learning.myannotation.simplejunit.MyAfter;
-import lijie.learning.myannotation.simplejunit.MyBefore;
-import lijie.learning.myannotation.simplejunit.MyTest;
+package lijie.learning.myannotation.my_junit;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

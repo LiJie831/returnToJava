@@ -1,4 +1,4 @@
-package lijie.learning.myannotation.simplejunit;
+package lijie.learning.myannotation.my_junit;
 
 //测试类
 public class AnExampleToBeTest {
