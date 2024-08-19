@@ -1,6 +1,13 @@
 package lijie.learning.itheima.d1.exp2.service;
 
+import lijie.learning.itheima.d1.exp2.domain.Account;
+
+import java.util.List;
+
 public interface IAccountService {
-    //模拟保存账户
-    void saveAccount();
+    List<Account> findAllAccount();
+    Account findAccountById(Integer id);
+    void saveAccount(Account account);
+    void deleteAccount(Integer id);
+    void updateAccount(Account account);
 }
