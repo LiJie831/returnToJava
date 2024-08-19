@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id="accountService" class="lijie.learning.itheima.d1.exp2.service.impl.AccountServiceImpl"></bean>-->
+<!--    <bean id="beanFactory" class="lijie.learning.itheima.d1.factory.BeanFactory1"/>-->
+<!--    <bean id="accountService" scope="prototype" class="lijie.learning.itheima.d1.factory.BeanStaticFactory" factory-method="getAccountService"/>-->
+    <bean id="accountService1" class="lijie.learning.itheima.d1.exp2.service.impl.AccountServiceImpl">
+        <constructor-arg name="name" value="李洁831"/>
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="birthday" ref="now"/>
+
+    </bean>
+    <bean id="now" class="java.util.Date"/>
+    <bean id="accountService2" class="lijie.learning.itheima.d1.exp2.service.impl.AccountServiceImpl">
+        <property name="name" value="李洁831"/>
+        <property name="age" value="19"/>
+        <property name="birthday" ref="now"/>
+    </bean>
+    <bean id="accountDao" class="lijie.learning.itheima.d1.exp2.dao.impl.AccountDaoImpl"></bean>
+</beans>
