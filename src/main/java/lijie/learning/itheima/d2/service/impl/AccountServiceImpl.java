@@ -1,28 +1,41 @@
 package lijie.learning.itheima.d2.service.impl;
 
 import lijie.learning.itheima.d2.dao.IAccountDao;
+import lijie.learning.itheima.d2.domain.Account;
 import lijie.learning.itheima.d2.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import java.util.List;
 
-@Service
+@Service("accountService")
 public class AccountServiceImpl implements IAccountService {
-    @Autowired @Qualifier("dao1")
+    @Autowired
     private IAccountDao accountDao;
-    @PostConstruct
-    public void init(){
-        System.out.println("init...");
-    }
-    @PreDestroy
-    public void destory(){
-        System.out.println("destory..");
-    }
+
+
     @Override
-    public void saveAccount() {
-        accountDao.saveAccount();
+    public List<Account> findAllAccount() {
+        return accountDao.findAllAccount();
+    }
+
+    @Override
+    public Account findAccountById(Integer id) {
+        return accountDao.findAccountById(id);
+    }
+
+    @Override
+    public void saveAccount(Account account) {
+        accountDao.saveAccount(account);
+    }
+
+    @Override
+    public void deleteAccount(Integer id) {
+        accountDao.deleteAccount(id);
+    }
+
+    @Override
+    public void updateAccount(Account account) {
+        accountDao.updateAccount(account);
     }
 }
