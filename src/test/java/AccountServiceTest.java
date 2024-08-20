@@ -1,22 +1,29 @@
-
+import lijie.learning.config.MajorConfig;
 import lijie.learning.itheima.d2.domain.Account;
 import lijie.learning.itheima.d2.service.IAccountService;
 import org.junit.Assert;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import static org.mockito.Mockito.*;
 
 /**
  * use junit
  */
+@RunWith(SpringJUnit4ClassRunner.class)//换成能创建容器的main方法
+@ContextConfiguration(classes = MajorConfig.class)//何种方式创建容器
 public class AccountServiceTest {
-
-    ApplicationContext ac = new ClassPathXmlApplicationContext("bean_d2.xml");
-    IAccountService as = ac.getBean("accountService",IAccountService.class);
+    @Autowired
+    private IAccountService as;
     @Test
     public void testFindAll(){
         List<Account> lst = as.findAllAccount();

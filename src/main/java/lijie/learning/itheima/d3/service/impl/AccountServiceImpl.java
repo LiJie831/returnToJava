@@ -1,8 +1,8 @@
-package lijie.learning.itheima.d2.service.impl;
+package lijie.learning.itheima.d3.service.impl;
 
-import lijie.learning.itheima.d2.dao.IAccountDao;
-import lijie.learning.itheima.d2.domain.Account;
-import lijie.learning.itheima.d2.service.IAccountService;
+import lijie.learning.itheima.d3.dao.IAccountDao;
+import lijie.learning.itheima.d3.domain.Account;
+import lijie.learning.itheima.d3.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,5 +38,8 @@ public class AccountServiceImpl implements IAccountService {
     public void updateAccount(Account account) {
         accountDao.updateAccount(account);
     }
+    @Override
+    public void transfer(String sourceName, String targetName, Float money) {
 
+    }
 }

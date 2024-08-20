@@ -10,4 +10,5 @@ public interface IAccountService {
     void saveAccount(Account account);
     void deleteAccount(Integer id);
     void updateAccount(Account account);
+
 }
